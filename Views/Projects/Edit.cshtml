@@ -1,0 +1,16 @@
+@model PortfolioApp.Models.Project
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+<div class="admin-wrap">
+  <div class="admin-head">
+    <div>
+      <h2 class="admin-title">Edit Project</h2>
+      <p class="admin-sub">Update the details for "@Model.Title".</p>
+    </div>
+    <a class="btn btn-outline" asp-controller="Projects" asp-action="Index">← Back to projects</a>
+  </div>
+
+  @await Html.PartialAsync("_ProjectForm", Model)
+</div>

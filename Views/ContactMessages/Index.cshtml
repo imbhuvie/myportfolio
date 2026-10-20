@@ -1,0 +1,51 @@
+@model System.Collections.Generic.List<PortfolioApp.Models.ContactMessage>
+@{
+    ViewData["Title"] = "Inbox";
+}
+
+<div class="admin-wrap">
+  <div class="admin-head">
+    <div>
+      <h2 class="admin-title">Inbox</h2>
+      <p class="admin-sub">Project inquiries submitted through the contact form.</p>
+    </div>
+    <div class="admin-actions">
+      <a class="btn btn-outline" asp-controller="Projects" asp-action="Index">Manage Projects</a>
+      <form asp-controller="Account" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-outline">Logout</button>
+      </form>
+    </div>
+  </div>
+
+  @if (!Model.Any())
+  {
+    <div class="admin-empty">No inquiries yet.</div>
+  }
+
+  @foreach (var message in Model)
+  {
+    <div class="admin-card" style="@(message.IsRead ? "opacity:.6;" : "")">
+      <div class="admin-card-head">
+        <span class="admin-card-title">@message.Name</span>
+        <span class="admin-tag @(message.IsRead ? "off" : "on")">@(message.IsRead ? "read" : "new")</span>
+      </div>
+      <div class="admin-card-desc">
+        <div style="margin-bottom:8px;"><a class="services-link" href="mailto:@message.Email">@message.Email</a></div>
+        <div style="white-space:pre-line;">@message.Message</div>
+      </div>
+      <div class="admin-card-meta">@message.CreatedAt.ToString("yyyy-MM-dd HH:mm 'UTC'")</div>
+      <div class="admin-card-actions" style="margin-top:12px;">
+        @if (!message.IsRead)
+        {
+          <form asp-controller="ContactMessages" asp-action="MarkRead" asp-route-id="@message.Id" method="post">
+            <button type="submit" class="btn-sm">Mark Read</button>
+          </form>
+        }
+        <form asp-controller="ContactMessages" asp-action="Delete" asp-route-id="@message.Id" method="post"
+              onsubmit="return confirm('Delete this inquiry?');">
+          <button type="submit" class="btn-sm danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  }
+</div>

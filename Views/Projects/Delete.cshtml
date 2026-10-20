@@ -1,0 +1,30 @@
+@model PortfolioApp.Models.Project
+@{
+    ViewData["Title"] = "Delete Project";
+}
+
+<div class="admin-wrap">
+  <div class="admin-head">
+    <div>
+      <h2 class="admin-title">Delete Project</h2>
+      <p class="admin-sub">This will permanently remove the project from the portfolio.</p>
+    </div>
+    <a class="btn btn-outline" asp-controller="Projects" asp-action="Index">← Back to projects</a>
+  </div>
+
+  <div class="admin-card">
+    <div class="admin-card-head">
+      <span class="admin-card-title">@Model.Title</span>
+      <span class="admin-tag @(Model.IsActive ? "on" : "off")">@(Model.IsActive ? "active" : "hidden")</span>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+      <div class="admin-card-desc">@Model.Description</div>
+    }
+
+    <form asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" method="post" style="display:flex; gap:10px;">
+      <button type="submit" class="btn btn-primary" style="background:var(--red); color:#fff;">Delete</button>
+      <a class="btn btn-outline" asp-controller="Projects" asp-action="Index">Cancel</a>
+    </form>
+  </div>
+</div>

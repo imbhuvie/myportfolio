@@ -1,0 +1,429 @@
+@model PortfolioApp.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+
+<div class="titlebar">
+  <div class="titlebar-top">
+    <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+    <div class="filepath">Portfolio<span> — Bhupendra Verma.sln</span></div>
+    <div class="theme-toggle" id="themeToggle" title="Toggle theme"><div class="knob" id="themeKnob">🌙</div></div>
+  </div>
+  <nav class="tabs">
+    <div class="tab active" data-target="hero">about<span class="ext">.cs</span></div>
+    <div class="tab" data-target="experience">experience<span class="ext">.cs</span></div>
+    <div class="tab" data-target="skills">skills<span class="ext">.json</span></div>
+    <div class="tab" data-target="services">services<span class="ext">.json</span></div>
+    <div class="tab" data-target="projects">projects<span class="ext">.cs</span></div>
+    <div class="tab" data-target="education">education<span class="ext">.log</span></div>
+    <div class="tab" data-target="contact">contact<span class="ext">.md</span></div>
+  </nav>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" style="border-bottom:1px solid var(--border); padding-top:0; padding-bottom:70px;">
+  <div class="editor">
+    <div class="gutter" id="gutter"></div>
+    <div class="code-pane">
+      <div class="code-line"><span class="cm">// Portfolio.cs</span></div>
+      <div class="code-line"><span class="kw">namespace</span> <span class="tp">Bhupendra</span></div>
+      <div class="code-line">{</div>
+      <div class="code-line">&nbsp;&nbsp;<span class="kw">public class</span> <span class="tp">Developer</span></div>
+      <div class="code-line">&nbsp;&nbsp;{</div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">public string</span> <span class="fn">Name</span> => <span class="str">"Bhupendra Verma"</span>;</div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">public string</span> <span class="fn">Role</span> => <span class="str">"Freelance .NET Developer"</span>;</div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">public string</span> <span class="fn">Focus</span> => <span class="str">"Backend Systems · APIs · Automation"</span>;</div>
+      <div class="code-line">&nbsp;&nbsp;}</div>
+      <div class="code-line">}</div>
+
+      <h1 class="hero-headline">Hey, I'm <span class="accent">Bhupendra</span>.<br>I build software that saves businesses time and money.</h1>
+      <div class="hero-sub" id="typedLine"><span id="typedText"></span><span class="cursor"></span></div>
+      <p class="hero-desc">Freelance .NET developer. I build reliable backend systems, APIs, and automation that replace manual, error-prone workflows — cutting operating costs and speeding up the work that matters. Daily drivers: C#, ASP.NET MVC, Web API, WPF, PostgreSQL.</p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#projects">▶ View Projects</a>
+        <a class="btn btn-outline" href="#contact">Let's Discuss Your Project</a>
+        <a class="btn btn-outline" href="https://github.com/imbhuvie" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+
+      <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start;">
+        <div class="hover-preview reveal">
+          <div>
+            <div class="hp-label">// hover preview</div>
+            <div class="hp-name">Bhupendra Verma</div>
+            <div class="hp-role">Freelance .NET Developer · Lucknow, IN</div>
+          </div>
+        </div>
+
+        <div class="terminal reveal">
+          <div class="terminal-head"><span>bash</span><span>zsh — 80×6</span></div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="line"><span class="prompt">➜</span> dotnet run --project Bhupendra.Services</div>
+            <div class="line out">services:   API Development · DB Optimization · Automation</div>
+            <div class="line out">stack:      C#, ASP.NET, WPF, PostgreSQL</div>
+            <div class="line out">status:     accepting freelance projects ✔</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== IMPACT / KEY METRICS ===================== -->
+<section id="impact" class="impact-section">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="stat-card reveal">
+        <div class="stat-value">~70%</div>
+        <div class="stat-label">manual effort reduced through automation</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">1.4+ yrs</div>
+        <div class="stat-label">building enterprise-grade .NET software</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">End-to-End</div>
+        <div class="stat-label">requirements → development → deployment → support</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">24h</div>
+        <div class="stat-label">typical response time to inquiries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / SUMMARY ===================== -->
+<section id="about">
+  <div class="container">
+    <div class="eyebrow">01 — profile</div>
+    <h2 class="sec-title">Software that pays for itself</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Most businesses I talk to have the same problem: too much manual work, duplicated data entry, slow reports, and systems that don't talk to each other. I build the software that removes that friction.</p>
+        <p>Across C#, ASP.NET MVC, Web API, WPF and PostgreSQL I've shipped enterprise-grade web and desktop applications, optimized PostgreSQL queries and stored procedures for faster reporting, and automated repetitive operations with Selenium and WebView2 — cutting manual effort by roughly 70% for the teams that use them.</p>
+        <p>The goal is simple: dependable systems that quietly save your team hours every single week. <span class="mono" style="color:var(--text-faint);">discipline today, success tomorrow.</span></p>
+      </div>
+
+      <div class="json-card reveal">
+        <div class="punc">{</div>
+        <div class="json-line"><span class="k">"role"</span><span class="punc">:</span> <span class="v">"Freelance .NET Developer"</span><span class="punc">,</span></div>
+        <div class="json-line"><span class="k">"experience"</span><span class="punc">:</span> <span class="v">"1.4+ years"</span><span class="punc">,</span></div>
+        <div class="json-line"><span class="k">"company"</span><span class="punc">:</span> <span class="v">"Fact Finding Tech"</span><span class="punc">,</span></div>
+        <div class="json-line"><span class="k">"based_in"</span><span class="punc">:</span> <span class="v">"Lucknow, India"</span><span class="punc">,</span></div>
+        <div class="json-line"><span class="k">"education"</span><span class="punc">:</span> <span class="v">"MCA, AKTU (8.36 CGPA)"</span><span class="punc">,</span></div>
+        <div class="json-line"><span class="k">"focus"</span><span class="punc">:</span> <span class="punc">[</span></div>
+        <div class="json-line" style="padding-left:32px;"><span class="v">"ASP.NET MVC"</span><span class="punc">,</span> <span class="v">"Web API"</span><span class="punc">,</span></div>
+        <div class="json-line" style="padding-left:32px;"><span class="v">"WPF"</span><span class="punc">,</span> <span class="v">"PostgreSQL"</span></div>
+        <div class="json-line"><span class="punc">],</span></div>
+        <div class="json-line"><span class="k">"contact"</span><span class="punc">:</span> <span class="v">"accepting projects"</span></div>
+        <div class="punc">}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience">
+  <div class="container">
+    <div class="eyebrow">02 — experience</div>
+    <h2 class="sec-title">Where I've been shipping code</h2>
+    <div class="timeline">
+      <div class="commit reveal">
+        <div class="commit-dot"></div>
+        <div class="commit-head">
+          <span class="commit-role">.NET Developer</span>
+          <span class="commit-hash">#a53f9e1</span>
+        </div>
+        <div class="commit-meta">Fact Finding Tech · April 2025 — Present</div>
+        <div class="commit-org">Service-based software company specializing in enterprise investigation and intelligence management solutions.</div>
+        <ul class="commit-list">
+          <li>Developed and maintained enterprise web and desktop applications using C#, ASP.NET MVC, Web API, WPF, and PostgreSQL.</li>
+          <li>Built and consumed RESTful APIs for seamless data exchange between web, desktop, and database components.</li>
+          <li>Optimized PostgreSQL queries, functions, and stored procedures — improving report generation and data retrieval performance.</li>
+          <li>Automated repetitive operational workflows using Selenium, WebView2, and Windows-based automation, cutting manual effort by ~70%.</li>
+          <li>Diagnosed and resolved application defects and production issues, improving overall reliability.</li>
+          <li>Involved end-to-end: requirement analysis, development, testing, deployment, and post-release support.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow">03 — stack</div>
+    <h2 class="sec-title">Tools I reach for</h2>
+    <div class="skills-file reveal">
+      <div class="skills-file-head">skills.json</div>
+      <div class="skills-body">
+        <div class="skill-group">
+          <div class="skill-key">"languages":</div>
+          <div class="chip-row">
+            <span class="chip">C#</span><span class="chip">SQL</span><span class="chip">PL/pgSQL</span><span class="chip">JavaScript</span><span class="chip">AutoHotkey</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-key">"backend":</div>
+          <div class="chip-row">
+            <span class="chip">.NET Core</span><span class="chip">ASP.NET MVC</span><span class="chip">ASP.NET Web API</span><span class="chip">Entity Framework</span><span class="chip">ADO.NET</span><span class="chip">LINQ</span><span class="chip">Async/Await</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-key">"frontend":</div>
+          <div class="chip-row">
+            <span class="chip">WPF</span><span class="chip">XAML</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">jQuery</span><span class="chip">AJAX</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-key">"databases":</div>
+          <div class="chip-row">
+            <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Stored Procedures</span><span class="chip">Query Optimization</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-key">"automation":</div>
+          <div class="chip-row">
+            <span class="chip">Selenium</span><span class="chip">WebView2</span><span class="chip">SMTP</span><span class="chip">Windows Automation</span><span class="chip">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-key">"tools":</div>
+          <div class="chip-row">
+            <span class="chip">Visual Studio</span><span class="chip">VS Code</span><span class="chip">pgAdmin</span><span class="chip">Git</span><span class="chip">IIS</span><span class="chip">Docker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services">
+  <div class="container">
+    <div class="eyebrow">04 — services</div>
+    <h2 class="sec-title">How I can help your business</h2>
+    <div class="services-file reveal">
+      <div class="services-file-head">services.json</div>
+      <div class="services-body">
+        <div class="service-card">
+          <div class="service-name">$ Custom API Development</div>
+          <p class="service-desc">RESTful APIs that connect your web app, desktop tools, and third-party services.</p>
+          <div class="chip-row">
+            <span class="chip">ASP.NET Web API</span><span class="chip">REST</span><span class="chip">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">$ Database Optimization & Migration</div>
+          <p class="service-desc">Faster queries, leaner stored procedures, and safe migrations to PostgreSQL.</p>
+          <div class="chip-row">
+            <span class="chip">SQL</span><span class="chip">PL/pgSQL</span><span class="chip">Performance</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">$ Legacy System Automation</div>
+          <p class="service-desc">Automate repetitive, manual workflows with Selenium, WebView2, and Windows automation.</p>
+          <div class="chip-row">
+            <span class="chip">Selenium</span><span class="chip">WebView2</span><span class="chip">Workflow</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">$ Desktop to Web Conversion</div>
+          <p class="service-desc">Move your WPF / desktop applications to modern, accessible web apps.</p>
+          <div class="chip-row">
+            <span class="chip">WPF</span><span class="chip">ASP.NET MVC</span><span class="chip">Modernization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="services-cta reveal">
+      Need something custom? <a href="#contact" class="services-link">Let's Discuss Your Project →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects">
+  <div class="container">
+    <div class="eyebrow">05 — projects</div>
+    <h2 class="sec-title">Something I've built</h2>
+
+    @foreach (var project in Model.Projects)
+    {
+      <div class="project-card reveal">
+        <div class="project-mock">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="url">@(project.Url ?? "portfolio.local/project")</span>
+            </div>
+            <div class="browser-body">
+              <div class="mock-block b1"></div>
+              <div class="mock-block b2"></div>
+              <div class="mock-block b3"></div>
+              <div class="mock-block b4"></div>
+              <div class="mock-block b5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-eyebrow">PROJECT</div>
+          <h3 class="project-title">@project.Title</h3>
+          <p class="project-desc">@project.Description</p>
+
+          @if (!string.IsNullOrWhiteSpace(project.Problem))
+          {
+            <div class="project-issue">
+              <div class="issue-label">// Problem</div>
+              <p>@project.Problem</p>
+            </div>
+          }
+
+          @if (!string.IsNullOrWhiteSpace(project.Solution))
+          {
+            <div class="project-issue solution">
+              <div class="issue-label">// Solution</div>
+              <p>@project.Solution</p>
+            </div>
+          }
+
+          @if (!string.IsNullOrWhiteSpace(project.Features))
+          {
+            <ul class="project-features">
+              @foreach (var feature in project.Features.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+              {
+                <li>@feature</li>
+              }
+            </ul>
+          }
+
+          @if (!string.IsNullOrWhiteSpace(project.TechStack))
+          {
+            <div class="project-stack">
+              @foreach (var chip in project.TechStack.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+              {
+                <span class="chip">@chip</span>
+              }
+            </div>
+          }
+
+          @if (!string.IsNullOrWhiteSpace(project.Url))
+          {
+            <div class="project-line">
+              <a class="btn btn-outline" href="@project.Url" target="_blank" rel="noopener">Visit Project ↗</a>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    @if (!Model.Projects.Any())
+    {
+      <div class="more-soon reveal">// more projects pushing to main soon — check back later 👀</div>
+    }
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education">
+  <div class="container">
+    <div class="eyebrow">06 — education</div>
+    <h2 class="sec-title">Academic background</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-degree">Master of Computer Applications (MCA)</div>
+        <div class="edu-school">Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</div>
+        <div class="edu-meta"><span>CGPA: 8.36</span><span>Aug 2024</span></div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+        <div class="edu-school">Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur</div>
+        <div class="edu-meta"><span>Completed</span><span>Aug 2022</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" style="border-bottom:none;">
+  <div class="container">
+    <div class="eyebrow">07 — contact</div>
+    <h2 class="sec-title">Let's build your project</h2>
+    <div class="contact-wrap">
+      <div class="md-block reveal">
+        <p># Get in touch</p>
+        <h4>&gt; Currently accepting</h4>
+        <p>Freelance projects & collaborations. Tell me about the problem you're trying to solve and I'll reply with how I'd approach it.</p>
+        <h4>&gt; What happens next</h4>
+        <p>1. I reply within 24 hours · 2. Free discovery call · 3. Fixed quote</p>
+
+        <div class="sticky-note">
+          <img src="/images/avatar-illustration.jpg" alt="Off-duty avatar">
+          <div class="quote">"<b>Discipline today,</b> success tomorrow."<br>— focus mode: on</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form reveal">
+          <div class="form-bar">
+            <span class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></span>
+            <span class="form-file">project-brief.md</span>
+          </div>
+          <form id="contactForm" class="form-body" novalidate>
+            @Html.AntiForgeryToken()
+            <div class="code-line"><span class="cm">// tell me about your project</span></div>
+            <div class="field">
+              <label for="Name">name</label>
+              <input class="form-input" id="Name" name="Name" type="text" placeholder="Your name" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="Email">email</label>
+              <input class="form-input" id="Email" name="Email" type="email" placeholder="you@company.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="Message">project_details</label>
+              <textarea class="form-input" id="Message" name="Message" rows="5" placeholder="What are you trying to build or fix?"></textarea>
+            </div>
+            <input type="text" name="Honeypot" id="Honeypot" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button type="submit" class="btn btn-primary">Send Project Brief →</button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+
+        <div class="contact-card reveal" style="margin-top:20px;">
+          <div class="contact-row">
+            <div><div class="label">EMAIL</div>bhupendraverma7388@@gmail.com</div>
+            <button class="copy-btn" onclick="copyText('bhupendraverma7388@@gmail.com', this)">Copy</button>
+          </div>
+          <div class="contact-row">
+            <div><div class="label">PHONE</div>+91 89538 34949</div>
+            <button class="copy-btn" onclick="copyText('8953834949', this)">Copy</button>
+          </div>
+          <div class="contact-row">
+            <div><div class="label">GITHUB</div>github.com/imbhuvie</div>
+            <a class="copy-btn" href="https://github.com/imbhuvie" target="_blank" rel="noopener">Visit</a>
+          </div>
+          <div class="contact-row">
+            <div><div class="label">LINKEDIN</div>linkedin.com/in/imbhuvie</div>
+            <a class="copy-btn" href="https://www.linkedin.com/in/imbhuvie/" target="_blank" rel="noopener">Visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:bhupendraverma7388@@gmail.com">Email</a>
+    <a href="https://github.com/imbhuvie" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/imbhuvie/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="footer-note">© 2026 Bhupendra Verma — built with C#, coffee, and a bit of CSS.</div>
+  <span class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ back to top</span>
+</footer>
+
+

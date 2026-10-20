@@ -1,0 +1,48 @@
+@model System.Collections.Generic.List<PortfolioApp.Models.Project>
+@{
+    ViewData["Title"] = "Manage Projects";
+}
+
+<div class="admin-wrap">
+  <div class="admin-head">
+    <div>
+      <h2 class="admin-title">Manage Projects</h2>
+      <p class="admin-sub">Projects shown in the portfolio's "projects" section.</p>
+    </div>
+    <div class="admin-actions">
+      <a class="btn btn-primary" asp-controller="Projects" asp-action="Create">+ Add Project</a>
+      <a class="btn btn-outline" asp-controller="ContactMessages" asp-action="Index">Inbox</a>
+      <form asp-controller="Account" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-outline">Logout</button>
+      </form>
+    </div>
+  </div>
+
+  @if (TempData["Message"] is string message)
+  {
+    <div class="admin-message" style="border-left-color:var(--green);">@message</div>
+  }
+
+  @if (!Model.Any())
+  {
+    <div class="admin-empty">No projects yet — click "Add Project" to create the first one.</div>
+  }
+
+  @foreach (var project in Model)
+  {
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <span class="admin-card-title">@project.Title</span>
+        <span class="admin-tag @(project.IsActive ? "on" : "off")">@(project.IsActive ? "active" : "hidden")</span>
+      </div>
+      @if (!string.IsNullOrWhiteSpace(project.Description))
+      {
+        <div class="admin-card-desc">@project.Description</div>
+      }
+      <div class="admin-card-actions">
+        <a class="btn-sm" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id">Edit</a>
+        <a class="btn-sm danger" asp-controller="Projects" asp-action="Delete" asp-route-id="@project.Id">Delete</a>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,66 @@
+@model PortfolioApp.Models.Project
+
+<form asp-action="@ViewBag.FormAction" method="post" class="admin-form">
+  <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+  <input type="hidden" asp-for="Id" />
+
+  <div class="form-group">
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-input" />
+    <span asp-validation-for="Title" class="field-validation-error"></span>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-input"></textarea>
+    <div class="form-hint">Short summary shown under the project title.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Problem" class="form-label"></label>
+    <textarea asp-for="Problem" class="form-input"></textarea>
+    <div class="form-hint">The business problem this project solves. Shown as a "Problem" panel on the site.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Solution" class="form-label"></label>
+    <textarea asp-for="Solution" class="form-input"></textarea>
+    <div class="form-hint">How the project solves it. Shown as a "Solution" panel on the site.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Features" class="form-label"></label>
+    <textarea asp-for="Features" class="form-input"></textarea>
+    <div class="form-hint">One feature per line. Each line becomes a bullet point on the site.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="TechStack" class="form-label"></label>
+    <input asp-for="TechStack" class="form-input" placeholder="C#, .NET 8, PostgreSQL" />
+    <div class="form-hint">Comma-separated list. Each item becomes a chip on the site.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Url" class="form-label"></label>
+    <input asp-for="Url" class="form-input" placeholder="https://example.com" />
+    <div class="form-hint">Optional link, shown as a "Visit Project" button on the site.</div>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="DisplayOrder" class="form-label"></label>
+    <input asp-for="DisplayOrder" class="form-input" type="number" />
+    <div class="form-hint">Lower numbers appear first.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-check">
+      <input asp-for="IsActive" type="checkbox" />
+      <span>Visible on the public site</span>
+    </label>
+  </div>
+
+  <div class="form-group" style="display:flex; gap:10px;">
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a class="btn btn-outline" asp-controller="Projects" asp-action="Index">Cancel</a>
+  </div>
+</form>
